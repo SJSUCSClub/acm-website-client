@@ -1,8 +1,7 @@
 import React from "react";
-import OfficerCard from "../components/OfficerCard";
-import TextWithImage from "../components/TextWithImage";
+import OfficerCard from "../components/molecules/OfficerCard";
+import TextWithImage from "../components/organisms/TextWithImage";
 import { MemberBtn } from "../components/molecules/member-btn";
-import SocialBtn from "../components/molecules/social-btn";
 
 const developers = [
   {

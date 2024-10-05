@@ -1,5 +1,5 @@
 import React from "react";
-import LinkedinBtn from "./molecules/linkedin-btn";
+import LinkedinBtn from "./linkedin-btn";
 
 interface IOfficerCardProps {
   photo: string;

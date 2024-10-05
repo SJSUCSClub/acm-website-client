@@ -1,4 +1,4 @@
-import PlanBtn from "./molecules/plan-btn";
+import PlanBtn from "./plan-btn";
 
 type Variant = 'primary' | 'secondary' | 'tertiary' | "ghost";
 

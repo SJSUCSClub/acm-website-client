@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import Logo from "/Logo.png";
 
-import LinkCard from "./LinkCard";
+import LinkCard from "../molecules/LinkCard";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
