@@ -2,6 +2,7 @@ import React from "react";
 import OfficerCard from "../components/OfficerCard";
 import TextWithImage from "../components/TextWithImage";
 import { MemberBtn } from "../components/molecules/member-btn";
+import SocialBtn from "../components/molecules/social-btn";
 
 const developers = [
   {

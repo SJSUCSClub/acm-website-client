@@ -7,6 +7,7 @@ import TestimonialCard from "../components/TestimonialCard";
 import { useState } from "react";
 import MemberBtn from "../components/molecules/member-btn";
 import GetInvolvedBtn from "../components/molecules/get-involved-btn";
+import SocialBtn from "../components/molecules/social-btn";
 
 const spotlights: ISpotlight[] = [
   {
@@ -115,52 +116,34 @@ const Hero = () => {
           <ACMCSHero />
         </div>
 
-        <div className="animate-[fadeIn_2s_ease-in-out] md:text-lg text-[3vw] text-center transform md:-translate-y-24 pb-3 duration-300 flex-cols md:flex items-center place-content-center gap-5">
-          <a
-            style={{}}
-            className="justify-center relative font-semibold transition ease-in-out hover:text-white hover:scale-110 shadow-md flex  border-[#b4c9d9] border-2 rounded-3xl py-2 px-4 bg-[#87adcd] text-[#c1d6e6]"
-            target="_blank"
-            href="https://discord.gg/Rw85ngkExu"
-          >
-            <img
+        <div className="md:text-lg text-[3vw] text-center transform md:-translate-y-24 pb-3 flex-cols md:flex items-center place-content-center gap-5">
+
+        <SocialBtn className="w-full md:w-auto"><img
               className="dark:invert pr-[2%] md:pr-[5%] w-[5vw] md:w-[30%] h-auto"
               src="./icons/discord.svg"
               width={0}
               height={0}
               alt={""}
             />
-            Discord
-          </a>
+            Discord</SocialBtn>
 
-          <a
-            className="justify-center relative font-semibold transition ease-in-out hover:text-white hover:scale-110 shadow-md flex border-[#b4c9d9] border-2 rounded-3xl py-2 px-4 bg-[#87adcd] text-[#c1d6e6] "
-            target="_blank"
-            href="https://www.instagram.com/sjsuacm/"
-          >
-            <img
+            <SocialBtn className="w-full md:w-auto"><img
               className="dark:invert pr-[2%] md:pr-[5%] w-[5vw] md:w-[25%] h-auto"
               src="./icons/Instagram.svg"
               width={0}
               height={0}
               alt={""}
             />
-            Instagram
-          </a>
+            Instagram</SocialBtn>
 
-          <a
-            className="justify-center relative font-semibold transition ease-in-out hover:text-white hover:scale-110 shadow-md flex  border-[#b4c9d9] border-2 rounded-3xl py-2 px-4 bg-[#87adcd] text-[#c1d6e6]"
-            target="_blank"
-            href="https://www.linkedin.com/company/sjsu-computer-science-club/about/"
-          >
-            <img
+            <SocialBtn className="w-full md:w-auto"><img
               className="dark:invert pr-[2%] md:pr-[5%] w-[5vw] md:w-[25%] h-auto"
               src="./icons/logo2.svg"
               width={0}
               height={0}
               alt={""}
             />
-            Linkedin
-          </a>
+            Linkedin</SocialBtn>
 
           <MemberBtn />
         </div>
