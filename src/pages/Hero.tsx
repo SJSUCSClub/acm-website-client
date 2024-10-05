@@ -5,8 +5,8 @@ import SpotLightCard from "../components/SpotlightCard";
 import TestimonialCard from "../components/TestimonialCard";
 
 import { useState } from "react";
-import GetInvolvedButton from "../components/ButtonGetInvolved";
 import MemberBtn from "../components/molecules/member-btn";
+import GetInvolvedBtn from "../components/molecules/get-involved-btn";
 
 const spotlights: ISpotlight[] = [
   {
@@ -325,7 +325,7 @@ const Hero = () => {
         />
       </div>
       <div className="flex justify-center items-center pt-12 ">
-        <GetInvolvedButton />
+        <GetInvolvedBtn />
       </div>
     </div>
   );

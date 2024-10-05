@@ -15,7 +15,7 @@ export const Btn: React.FC<Props> = ({
 }) => (
   <button
     className={cn(
-      'flex items-center justify-center gap-[10px] rounded-full py-[10px] px-[20px] border-2 disabled:text-neutral',
+      'flex items-center justify-center gap-[10px] rounded-full py-[10px] px-[20px] border-2 disabled:text-neutral font-bold',
       {
         'bg-primary text-background hover:bg-primary-highlight disabled:bg-border border-[#ecd79c]':
           variant === 'primary',
