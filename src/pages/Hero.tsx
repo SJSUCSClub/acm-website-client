@@ -1,8 +1,7 @@
 import ACMCSHero from "acm-cs-sjsu-hero-component";
-import { Link } from "@tanstack/react-router";
-import GetInvolvedCard from "../components/molecules/GetInvolvedCard";
-import SpotLightCard from "../components/molecules/SpotlightCard";
-import TestimonialCard from "../components/molecules/TestimonialCard";
+import GetInvolvedCard from "../components/molecules/get-involved-card";
+import SpotLightCard from "../components/molecules/spotlight-card";
+import TestimonialCard from "../components/molecules/testimonial-card";
 
 import { useState } from "react";
 import MemberBtn from "../components/molecules/member-btn";
