@@ -26,8 +26,4 @@ export const Route = createRootRoute({
       {process.env.NODE_ENV === 'development' && <TanStackRouterDevtools />}
     </QueryClientProvider>
   ),
-<<<<<<< HEAD
 })
-=======
-})
->>>>>>> 769ee20 (tanstack query, router; bun; fix some lints by adding interfaces)
