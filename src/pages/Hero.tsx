@@ -117,7 +117,7 @@ const Hero = () => {
 
         <div className="md:text-lg text-[3vw] text-center transform md:-translate-y-24 pb-3 flex-cols md:flex items-center place-content-center gap-5">
 
-        <SocialBtn className="w-full md:w-auto"><img
+        <SocialBtn className="w-full md:w-auto" href="https://discord.gg/Rw85ngkExu"><img
               className="dark:invert pr-[2%] md:pr-[5%] w-[5vw] md:w-[30%] h-auto"
               src="./icons/discord.svg"
               width={0}
@@ -126,7 +126,7 @@ const Hero = () => {
             />
             Discord</SocialBtn>
 
-            <SocialBtn className="w-full md:w-auto"><img
+            <SocialBtn className="w-full md:w-auto" href="https://www.instagram.com/sjsuacm/"><img
               className="dark:invert pr-[2%] md:pr-[5%] w-[5vw] md:w-[25%] h-auto"
               src="./icons/Instagram.svg"
               width={0}
@@ -135,7 +135,7 @@ const Hero = () => {
             />
             Instagram</SocialBtn>
 
-            <SocialBtn className="w-full md:w-auto"><img
+            <SocialBtn className="w-full md:w-auto" href="https://www.linkedin.com/company/sjsu-computer-science-club/about/"><img
               className="dark:invert pr-[2%] md:pr-[5%] w-[5vw] md:w-[25%] h-auto"
               src="./icons/logo2.svg"
               width={0}

@@ -2,7 +2,8 @@ import React, { useState } from "react";
 
 import Logo from "/Logo.png";
 
-import LinkCard from "../../molecules/link-card";
+import LinkCard from "../../atoms/link-card";
+import Btn from "../../atoms/btn";
 
 export const NavBar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,9 +28,9 @@ export const NavBar: React.FC = () => {
       </div>
 
       <div className="md:hidden place-content-center items-center">
-        <button
+        <Btn variant="tertiary"
           onClick={handleClick}
-          className="flex flex-col justify-center items-center"
+          className="flex flex-col justify-center items-center gap-0"
         >
           <span
             className={`bg-black block transition-all duration-300 ease-out 
@@ -53,7 +54,7 @@ export const NavBar: React.FC = () => {
                                   : "translate-y-0.5"
                               }`}
           ></span>
-        </button>
+        </Btn>
       </div>
     </div>
     <div

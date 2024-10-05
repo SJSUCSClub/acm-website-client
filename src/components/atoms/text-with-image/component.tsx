@@ -1,8 +1,6 @@
-import Card from '../../atoms/card';
 import React from 'react';
 
-
-interface Props {
+export interface ITextWithImageProps {
   children: React.ReactNode;
   reverse?: boolean;
   logo?: boolean;
@@ -10,7 +8,7 @@ interface Props {
   imageAlt: string;
 }
 
-export const TextWithImage: React.FC<Props> = ({ children,
+export const TextWithImage: React.FC<ITextWithImageProps> = ({ children,
   reverse = false,
   logo = false,
   imagePath,

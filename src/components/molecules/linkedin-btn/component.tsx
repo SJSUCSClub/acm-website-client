@@ -1,7 +1,7 @@
 import { Btn } from '../../atoms/btn';
 import LinkedIn from "/about/yellowLinkedIn.png";
 
-interface Props
+export interface ILinkedinBtnProps 
   extends Omit<
     React.ComponentProps<typeof Btn>,
     'variant'|'children'
@@ -9,7 +9,7 @@ interface Props
     href:string
 }
 
-export const LinkedinBtn: React.FC<Props> = ({ className, href, ...props }) => {
+export const LinkedinBtn: React.FC<ILinkedinBtnProps> = ({ className, href, ...props }) => {
     return (
     <Btn
       className={className}

@@ -2,14 +2,14 @@ import Card from '../../atoms/card';
 import React from 'react';
 
 
-interface Props {
+export interface ISpotLightCardProps {
   type: string;
   image: string;
   title: string;
   description: string;
 }
 
-export const SpotLightCard: React.FC<Props> = ({ type, image, title, description }) => (
+export const SpotLightCard: React.FC<ISpotLightCardProps> = ({ type, image, title, description }) => (
   <Card className="flex-none grid grid-cols-2 gap-5 p-5 place-items-center bg-white h-auto w-[100%] md:w-[800px] rounded-lg shadow-lg transition ease-in-out hover:shadow-xl mb-3">
       <div className=" w-[100%] h-auto">
         <img

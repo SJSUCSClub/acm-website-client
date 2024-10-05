@@ -4,7 +4,7 @@ import { createRootRoute, Outlet } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/router-devtools'
 
 import "../globals.css";
-import Footer from "../components/organisms/footer";
+import Footer from "../components/atoms/footer";
 import Navbar from "../components/organisms/navbar";
 import Faq from "../components/organisms/faq";
 import "acm-cs-sjsu-hero-component/dist/styles.css";

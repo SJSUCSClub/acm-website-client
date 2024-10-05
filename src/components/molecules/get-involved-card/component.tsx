@@ -4,7 +4,7 @@ import PlanBtn from "../plan-btn";
 
 type Variant = 'primary' | 'secondary' | 'tertiary' | "ghost";
 
-interface Props {
+export interface IGetInvolvedCardProps {
   plan: string;
   price: string;
   description: string;
@@ -14,7 +14,7 @@ interface Props {
   buttonStyling: Variant;
 }
 
-export const GetInvolvedCard: React.FC<Props> = ({ plan,
+export const GetInvolvedCard: React.FC<IGetInvolvedCardProps> = ({ plan,
   price,
   description,
   priceStyling,

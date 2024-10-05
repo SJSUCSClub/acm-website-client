@@ -2,12 +2,12 @@ import { cn } from '../../../utils/cn';
 
 type Variant = 'primary' | 'secondary' | 'tertiary' | 'ghost';
 
-interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant: Variant;
   children?: React.ReactNode;
 }
 
-export const Btn: React.FC<Props> = ({
+export const Btn: React.FC<IButtonProps> = ({
   variant,
   children,
   className,

@@ -1,9 +1,5 @@
 import React, { useState } from "react";
 
-import Logo from "/Logo.png";
-
-import LinkCard from "../../molecules/link-card";
-
 export const Faq: React.FC = () => {
   const questions = [
     {

@@ -1,14 +1,14 @@
 import { Btn } from '../../atoms/btn';
 import RightArrow from "/about/rightarrow.svg";
 
-interface Props
+export interface IPlanBtnProps
   extends Omit<
     React.ComponentProps<typeof Btn>,
     'children' | 'href'
   > {
 }
 
-export const PlanBtn: React.FC<Props> = ({ className,variant, ...props }) => {
+export const PlanBtn: React.FC<IPlanBtnProps> = ({ className,variant, ...props }) => {
     return (
     <Btn
       className={className}

@@ -1,3 +1,4 @@
+import Btn from "../../../components/atoms/btn";
 import React, { useState } from "react";
 
 export const MobileMenu: React.FC = () => {
@@ -8,7 +9,8 @@ export const MobileMenu: React.FC = () => {
   };
   return (
     <div>
-      <button
+      <Btn
+        variant="tertiary"
         onClick={handleClick}
         className="flex flex-col justify-center items-center"
       >
@@ -34,7 +36,7 @@ export const MobileMenu: React.FC = () => {
                                 : "translate-y-0.5"
                             }`}
         ></span>
-      </button>
+      </Btn>
       <div>About Us Events</div>
     </div>
   )

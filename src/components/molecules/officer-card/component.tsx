@@ -2,14 +2,14 @@ import Card from '../../atoms/card';
 import React from 'react';
 import LinkedinBtn from '../linkedin-btn';
 
-interface Props {
+export interface IOfficerCardProps {
   photo: string;
   name: string;
   position: string;
   linkedin: string;
 }
 
-export const OfficerCard: React.FC<Props> = ({ photo, name, position, linkedin }) => (
+export const OfficerCard: React.FC<IOfficerCardProps> = ({ photo, name, position, linkedin }) => (
   <Card  className="transition duration-100 ease-in-out hover:shadow-2xl justify-center items-center w-[19rem] h-[rem] border-[2px] gap-2px py-2 text-[16px] sm:text-sm rounded-xl shadow-lg mb-10">
       <img
         src={photo}

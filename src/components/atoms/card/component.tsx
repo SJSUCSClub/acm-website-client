@@ -1,8 +1,8 @@
-interface Props extends React.ButtonHTMLAttributes<HTMLDivElement> {
+export interface ICardProps extends React.ButtonHTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
 }
 
-export const Card: React.FC<Props> = ({
+export const Card: React.FC<ICardProps> = ({
   children,
   className,
   ...props
