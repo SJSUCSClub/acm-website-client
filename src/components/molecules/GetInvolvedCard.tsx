@@ -18,7 +18,6 @@ const GetInvolvedCard = ({
   description,
   priceStyling,
   textList,
-  buttonText,
   buttonStyling,
 }: GetInvolvedCardProps) => {
   return (

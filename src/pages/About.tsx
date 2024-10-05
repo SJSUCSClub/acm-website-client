@@ -1,5 +1,5 @@
 import React from "react";
-import OfficerCard from "../components/molecules/OfficerCard";
+import OfficerCard from "../components/molecules/officer-card";
 import TextWithImage from "../components/organisms/TextWithImage";
 import { MemberBtn } from "../components/molecules/member-btn";
 
