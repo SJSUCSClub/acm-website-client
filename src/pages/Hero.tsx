@@ -6,6 +6,7 @@ import TestimonialCard from "../components/TestimonialCard";
 
 import { useState } from "react";
 import GetInvolvedButton from "../components/ButtonGetInvolved";
+import MemberBtn from "../components/molecules/member-btn";
 
 const spotlights: ISpotlight[] = [
   {
@@ -161,20 +162,7 @@ const Hero = () => {
             Linkedin
           </a>
 
-          <a
-            className="justify-center relative transition font-bold ease-in-out hover:text-white hover:scale-110 shadow-md flex  border-[#ecd79c] border-2 rounded-3xl py-2 px-4 bg-[#f3c954] text-white"
-            target="_blank"
-            href="https://docs.google.com/forms/d/e/1FAIpQLSf1KNg9T5sPAM9EtOm3i_bQctlq81b7QIns1uNkWtlSCpzOvg/viewform"
-          >
-            Become a Member
-            <img
-              className="pl-[2%] w-[4vw] md:w-[22px] h-auto"
-              src="./icons/right-chevron.svg"
-              width={0}
-              height={0}
-              alt={""}
-            />
-          </a>
+          <MemberBtn />
         </div>
 
         <div className="animate-[fadeIn_2s_ease-in-out] text-left inline flex flex-col gap-4">
