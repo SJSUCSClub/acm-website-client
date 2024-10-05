@@ -1,7 +1,14 @@
 import React from "react";
 import LinkedIn from "/about/yellowLinkedIn.png";
 
-const OfficerCard = ({ photo, name, position, linkedin }: any) => {
+interface IOfficerCardProps {
+  photo: string;
+  name: string;
+  position: string;
+  linkedin: string;
+}
+
+const OfficerCard = ({ photo, name, position, linkedin }: IOfficerCardProps) => {
   return (
     <div className="transition duration-100 ease-in-out hover:shadow-2xl justify-center items-center w-[19rem] h-[rem] border-[2px] gap-2px py-2 text-[16px] sm:text-sm rounded-xl shadow-lg mb-10">
       <img

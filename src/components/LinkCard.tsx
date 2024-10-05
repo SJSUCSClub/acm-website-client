@@ -1,10 +1,15 @@
 import React from "react";
-import Link from "react-router-dom";
+import { Link } from "@tanstack/react-router";
 
-const LinkCard = ({ path, pathName }: any) => {
+interface ILinkCardProps {
+  path: string;
+  pathName: string;
+}
+
+const LinkCard = ({ path, pathName }: ILinkCardProps) => {
   return (
-    <a
-      href={path}
+    <Link
+      to={path}
       style={{ textDecoration: "none", color: "#196096" }}
       className="text-sm font-semibold"
     >
@@ -13,7 +18,7 @@ const LinkCard = ({ path, pathName }: any) => {
       >
         {pathName}
       </div>
-    </a>
+    </Link>
   );
 };
 

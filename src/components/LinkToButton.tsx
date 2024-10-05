@@ -1,6 +1,10 @@
 import React from "react";
+interface ILinkToButtonProps {
+  url: string;
+  text: string;
+}
 
-const LinkToButton = ({ url, text }: any) => {
+const LinkToButton = ({ url, text }: ILinkToButtonProps) => {
   return (
     <div>
       <a
