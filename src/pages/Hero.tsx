@@ -145,7 +145,7 @@ const Hero = () => {
             />
             Linkedin</SocialBtn>
 
-          <MemberBtn />
+          <MemberBtn variant="primary"/>
         </div>
 
         <div className="animate-[fadeIn_2s_ease-in-out] text-left inline flex flex-col gap-4">
@@ -170,14 +170,9 @@ const Hero = () => {
             leaders like Apple, Tesla, and <b>Google</b> for exclusive
             networking opportunities.
           </div>
-
-          <Link
-            to="/about"
-            className="flex text-[#1a6096] w-40 h-[5%]"
-          >
-            Become a member {">"}
-          </Link>
         </div>
+        <MemberBtn variant="tertiary"/>
+
       </div>
 
       <div className="border-y-2 place-items-center grid grid-cols-3 grid-rows-1 py-12">
@@ -286,7 +281,7 @@ const Hero = () => {
           priceStyling={freePlan.priceStyling}
           textList={freePlan.textList}
           buttonText={freePlan.buttonText}
-          buttonStyling={freePlan.buttonStyling}
+          buttonStyling="ghost"
         />
         <GetInvolvedCard
           plan={semesterPlan.plan}
@@ -295,7 +290,7 @@ const Hero = () => {
           priceStyling={semesterPlan.priceStyling}
           textList={semesterPlan.textList}
           buttonText={semesterPlan.buttonText}
-          buttonStyling={semesterPlan.buttonStyling}
+          buttonStyling="primary"
         />
         <GetInvolvedCard
           plan={annualPlan.plan}
@@ -304,7 +299,7 @@ const Hero = () => {
           priceStyling={annualPlan.priceStyling}
           textList={annualPlan.textList}
           buttonText={annualPlan.buttonText}
-          buttonStyling={annualPlan.buttonStyling}
+          buttonStyling="secondary"
         />
       </div>
       <div className="flex justify-center items-center pt-12 ">

@@ -8,7 +8,7 @@ interface Props
   > {
 }
 
-export const MemberBtn: React.FC<Props> = ({ className,variant, ...props }) => {
+export const PlanBtn: React.FC<Props> = ({ className,variant, ...props }) => {
     return (
     <Btn
       className={className}
@@ -16,11 +16,12 @@ export const MemberBtn: React.FC<Props> = ({ className,variant, ...props }) => {
       {...props}
     >
       <a
-        href="https://docs.google.com/forms/d/e/1FAIpQLSf1KNg9T5sPAM9EtOm3i_bQctlq81b7QIns1uNkWtlSCpzOvg/viewform"
-        target="_blank"
+        href=""
         className="flex gap-3 no-underline font-bold"
+        onClick={(e) => e.preventDefault()}
+
       >
-        <span className=""> Become a Member {variant==="tertiary" && ">"}</span>
+        <span className=""> Choose this plan {variant==="ghost" && ">"}</span>
         <img src={RightArrow} alt="right arrow" />
       </a>
     </Btn>

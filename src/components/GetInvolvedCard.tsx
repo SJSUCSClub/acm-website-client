@@ -1,3 +1,7 @@
+import PlanBtn from "./molecules/plan-btn";
+
+type Variant = 'primary' | 'secondary' | 'tertiary' | "ghost";
+
 interface GetInvolvedCardProps {
   plan: string;
   price: string;
@@ -5,7 +9,7 @@ interface GetInvolvedCardProps {
   priceStyling: string;
   textList: string[];
   buttonText: string;
-  buttonStyling: string;
+  buttonStyling: Variant;
 }
 
 const GetInvolvedCard = ({
@@ -27,7 +31,9 @@ const GetInvolvedCard = ({
           <li key={index}> {text}</li>
         ))}
       </ul>
-      <button className={`${buttonStyling} mt-10`}>{buttonText}</button>
+      <div className="flex justify-center mt-10">
+        <PlanBtn variant={buttonStyling} />
+      </div>
     </div>
   );
 };

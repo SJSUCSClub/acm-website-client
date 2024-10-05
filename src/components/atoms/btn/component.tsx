@@ -21,7 +21,7 @@ export const Btn: React.FC<Props> = ({
           variant === 'primary',
         'bg-secondary text-background hover:bg-secondary-highlight disabled:bg-border':
           variant === 'secondary',
-        'bg-none text-primary hover:text-primary-highlight disabled:bg-none':
+        'bg-none text-primary hover:text-primary-highlight disabled:bg-none border-none':
           variant === 'tertiary',
         'bg-none text-secondary hover:text-secondary-highlight disabled:bg-none border-secondary hover:border-secondary-highlight disabled:border-neutral':
           variant === 'ghost',
