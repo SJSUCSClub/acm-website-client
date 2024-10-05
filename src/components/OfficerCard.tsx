@@ -1,5 +1,5 @@
 import React from "react";
-import LinkedIn from "/about/yellowLinkedIn.png";
+import LinkedinBtn from "./molecules/linkedin-btn";
 
 interface IOfficerCardProps {
   photo: string;
@@ -25,17 +25,8 @@ const OfficerCard = ({ photo, name, position, linkedin }: IOfficerCardProps) => 
       )}
       <h1 className="font-bold text-lg px-7">{name}</h1>
 
-      <div className="flex justify-start items-center w-full px-7 py-5">
-        <a
-          className="flex items-center no-underline"
-          href={linkedin}
-          target="_blank"
-        >
-          <img src={LinkedIn} width={16} height={16} />
-          <div className="text-sm font-semibold px-2">
-            <span className="text-primary">LinkedIn</span>
-          </div>
-        </a>
+      <div className="flex justify-start items-center w-full px-2 py-3">
+        <LinkedinBtn href={linkedin}/>
       </div>
     </div>
   );
