@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const MobileMenu = () => {
+export const MobileMenu: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
@@ -37,6 +37,5 @@ const MobileMenu = () => {
       </button>
       <div>About Us Events</div>
     </div>
-  );
+  )
 };
-export default MobileMenu;

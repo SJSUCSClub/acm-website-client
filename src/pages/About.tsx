@@ -1,6 +1,6 @@
 import React from "react";
 import OfficerCard from "../components/molecules/officer-card";
-import TextWithImage from "../components/organisms/TextWithImage";
+import TextWithImage from "../components/organisms/text-with-image";
 import { MemberBtn } from "../components/molecules/member-btn";
 
 const developers = [

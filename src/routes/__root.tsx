@@ -4,9 +4,9 @@ import { createRootRoute, Outlet } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/router-devtools'
 
 import "../globals.css";
-import Footer from "../components/organisms/Footer";
-import Navbar from "../components/organisms/Navbar";
-import FAQ from "../components/organisms/FAQ";
+import Footer from "../components/organisms/footer";
+import Navbar from "../components/organisms/navbar";
+import Faq from "../components/organisms/faq";
 import "acm-cs-sjsu-hero-component/dist/styles.css";
 
 const queryClient = new QueryClient()
@@ -18,7 +18,7 @@ export const Route = createRootRoute({
         <Navbar />
         <Outlet />
         <div className="flex">
-          <FAQ />
+          <Faq />
         </div>
         <Footer />
       </div>
