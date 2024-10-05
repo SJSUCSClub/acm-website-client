@@ -7,7 +7,7 @@ interface Props {
   pathName: string;
 }
 
-export const GetInvolvedCard: React.FC<Props> = ({ path, pathName }) => (
+export const LinkCard: React.FC<Props> = ({ path, pathName }) => (
   <Link
   to={path}
   style={{ textDecoration: "none", color: "#196096" }}
