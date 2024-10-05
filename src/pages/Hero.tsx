@@ -1,7 +1,6 @@
 import ACMCSHero from "acm-cs-sjsu-hero-component";
-import { Link } from "react-router-dom";
+import { Link } from "@tanstack/react-router";
 import GetInvolvedCard from "../components/GetInvolvedCard";
-import GetInvolved from "../components/ButtonGetInvolved";
 import SpotLightCard from "../components/SpotlightCard";
 import TestimonialCard from "../components/TestimonialCard";
 
@@ -107,7 +106,7 @@ const annualPlan = {
 };
 
 const Hero = () => {
-  const [card, setSpotlightPast] = useState(spotlights);
+  const [card] = useState(spotlights);
   return (
     <div className="text-center min-w-full flex-col items-center justify-between pt-10 pb-20 px-[5%]">
       <div className="min-h-screen">
@@ -116,11 +115,11 @@ const Hero = () => {
         </div>
 
         <div className="animate-[fadeIn_2s_ease-in-out] md:text-lg text-[3vw] text-center transform md:-translate-y-24 pb-3 duration-300 flex-cols md:flex items-center place-content-center gap-5">
-          <Link
+          <a
             style={{}}
             className="justify-center relative font-semibold transition ease-in-out hover:text-white hover:scale-110 shadow-md flex  border-[#b4c9d9] border-2 rounded-3xl py-2 px-4 bg-[#87adcd] text-[#c1d6e6]"
             target="_blank"
-            to="https://discord.gg/Rw85ngkExu"
+            href="https://discord.gg/Rw85ngkExu"
           >
             <img
               className="dark:invert pr-[2%] md:pr-[5%] w-[5vw] md:w-[30%] h-auto"
@@ -130,12 +129,12 @@ const Hero = () => {
               alt={""}
             />
             Discord
-          </Link>
+          </a>
 
-          <Link
+          <a
             className="justify-center relative font-semibold transition ease-in-out hover:text-white hover:scale-110 shadow-md flex border-[#b4c9d9] border-2 rounded-3xl py-2 px-4 bg-[#87adcd] text-[#c1d6e6] "
             target="_blank"
-            to="https://www.instagram.com/sjsuacm/"
+            href="https://www.instagram.com/sjsuacm/"
           >
             <img
               className="dark:invert pr-[2%] md:pr-[5%] w-[5vw] md:w-[25%] h-auto"
@@ -145,12 +144,12 @@ const Hero = () => {
               alt={""}
             />
             Instagram
-          </Link>
+          </a>
 
-          <Link
+          <a
             className="justify-center relative font-semibold transition ease-in-out hover:text-white hover:scale-110 shadow-md flex  border-[#b4c9d9] border-2 rounded-3xl py-2 px-4 bg-[#87adcd] text-[#c1d6e6]"
             target="_blank"
-            to="https://www.linkedin.com/company/sjsu-computer-science-club/about/"
+            href="https://www.linkedin.com/company/sjsu-computer-science-club/about/"
           >
             <img
               className="dark:invert pr-[2%] md:pr-[5%] w-[5vw] md:w-[25%] h-auto"
@@ -160,12 +159,12 @@ const Hero = () => {
               alt={""}
             />
             Linkedin
-          </Link>
+          </a>
 
-          <Link
+          <a
             className="justify-center relative transition font-bold ease-in-out hover:text-white hover:scale-110 shadow-md flex  border-[#ecd79c] border-2 rounded-3xl py-2 px-4 bg-[#f3c954] text-white"
             target="_blank"
-            to="https://docs.google.com/forms/d/e/1FAIpQLSf1KNg9T5sPAM9EtOm3i_bQctlq81b7QIns1uNkWtlSCpzOvg/viewform"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSf1KNg9T5sPAM9EtOm3i_bQctlq81b7QIns1uNkWtlSCpzOvg/viewform"
           >
             Become a Member
             <img
@@ -175,7 +174,7 @@ const Hero = () => {
               height={0}
               alt={""}
             />
-          </Link>
+          </a>
         </div>
 
         <div className="animate-[fadeIn_2s_ease-in-out] text-left inline flex flex-col gap-4">
@@ -201,13 +200,12 @@ const Hero = () => {
             networking opportunities.
           </div>
 
-          <a
+          <Link
+            to="/about"
             className="flex text-[#1a6096] w-40 h-[5%]"
-            target="_blank"
-            href="https://docs.google.com/forms/d/e/1FAIpQLSf1KNg9T5sPAM9EtOm3i_bQctlq81b7QIns1uNkWtlSCpzOvg/viewform"
           >
             Become a member {">"}
-          </a>
+          </Link>
         </div>
       </div>
 
@@ -278,7 +276,6 @@ const Hero = () => {
                 title={event.title}
                 description={event.description}
                 key={event.id}
-                id={undefined}
               />
             );
           })}

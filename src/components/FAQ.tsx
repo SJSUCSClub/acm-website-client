@@ -1,4 +1,4 @@
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
 
 const FAQ = () => {
   const questions = [
@@ -24,7 +24,7 @@ const FAQ = () => {
 
   const [expandedIndex, setExpandedIndex] = useState(-1);
 
-  const handleQuestionClick = (index: any) => {
+  const handleQuestionClick = (index: number) => {
     if (index === expandedIndex) {
       setExpandedIndex(-1);
     } else {

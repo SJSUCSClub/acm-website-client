@@ -1,10 +1,18 @@
+interface ITextWithImageProps {
+  children: React.ReactNode;
+  reverse?: boolean;
+  logo?: boolean;
+  imagePath: string;
+  imageAlt: string;
+}
+
 const TextWithImage = ({
   children,
   reverse = false,
   logo = false,
   imagePath,
   imageAlt,
-}: any) => {
+}: ITextWithImageProps) => {
   return (
     <div
       className={`flex flex-col lg:flex-row items-center gap-4 lg:gap-16 ${

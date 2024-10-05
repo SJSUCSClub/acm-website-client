@@ -296,7 +296,7 @@ const page = () => {
               <OfficerCard
                 key={index}
                 name={developer.name}
-                position={developer.position}
+                position={developer?.position || ""}
                 photo={developer.pfp}
                 linkedin={developer.linkedin}
               />

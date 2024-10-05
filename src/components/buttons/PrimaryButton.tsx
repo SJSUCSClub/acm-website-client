@@ -1,6 +1,11 @@
 import RightArrow from "/public/about/rightarrow.svg";
 
-const PrimaryButton = ({ text, destination }: any) => {
+interface PrimaryButtonProps {
+  text: string;
+  destination: string;
+}
+
+const PrimaryButton = ({ text, destination }: PrimaryButtonProps) => {
   return (
     <button className="bg-primary py-2 px-4 rounded-full border border-border border-2 hover:border-border-hovered">
       <a
