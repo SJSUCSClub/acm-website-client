@@ -17,11 +17,11 @@ export const PlanBtn: React.FC<Props> = ({ className,variant, ...props }) => {
     >
       <a
         href=""
-        className="flex gap-3 no-underline font-bold"
+        className="flex gap-2"
         onClick={(e) => e.preventDefault()}
 
       >
-        <span className=""> Choose this plan {variant==="ghost" && ">"}</span>
+        <span className=""> Choose this plan{variant==="ghost" && " >"}</span>
         <img src={RightArrow} alt="right arrow" />
       </a>
     </Btn>

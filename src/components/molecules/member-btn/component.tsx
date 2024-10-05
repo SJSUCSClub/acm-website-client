@@ -18,9 +18,9 @@ export const MemberBtn: React.FC<Props> = ({ className,variant, ...props }) => {
       <a
         href="https://docs.google.com/forms/d/e/1FAIpQLSf1KNg9T5sPAM9EtOm3i_bQctlq81b7QIns1uNkWtlSCpzOvg/viewform"
         target="_blank"
-        className="flex gap-3 no-underline font-bold"
+        className="flex gap-2"
       >
-        <span className=""> Become a Member {variant==="tertiary" && ">"}</span>
+        <span className=""> Become a Member{variant==="tertiary" && " >"}</span>
         <img src={RightArrow} alt="right arrow" />
       </a>
     </Btn>

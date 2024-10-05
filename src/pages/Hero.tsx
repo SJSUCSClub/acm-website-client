@@ -145,7 +145,7 @@ const Hero = () => {
             />
             Linkedin</SocialBtn>
 
-          <MemberBtn variant="primary"/>
+          <MemberBtn variant="primary" className="shadow-md animate-[fadeIn_2s_ease-in-out] hover:scale-110 duration-300"/>
         </div>
 
         <div className="animate-[fadeIn_2s_ease-in-out] text-left inline flex flex-col gap-4">
@@ -171,7 +171,7 @@ const Hero = () => {
             networking opportunities.
           </div>
         </div>
-        <MemberBtn variant="tertiary"/>
+        <MemberBtn variant="tertiary" className="animate-[fadeIn_2s_ease-in-out] hover:scale-110 duration-300"/>
 
       </div>
 
