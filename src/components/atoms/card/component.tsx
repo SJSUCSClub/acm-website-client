@@ -7,10 +7,7 @@ export const Card: React.FC<ICardProps> = ({
   className,
   ...props
 }) => (
-  <div
-    className={`${className} bg-white rounded-md`}
-    {...props}
-  >
+  <div className={`${className} bg-white rounded-md`} {...props}>
     {children}
   </div>
 );

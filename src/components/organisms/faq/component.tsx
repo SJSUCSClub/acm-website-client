@@ -78,5 +78,5 @@ export const Faq: React.FC = () => {
         </div>
       </div>
     </>
-  )
+  );
 };

@@ -39,5 +39,5 @@ export const MobileMenu: React.FC = () => {
       </Btn>
       <div>About Us Events</div>
     </div>
-  )
+  );
 };

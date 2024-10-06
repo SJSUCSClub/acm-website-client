@@ -262,7 +262,7 @@ const page = () => {
         </TextWithImage>
 
         <div className="flex gap-4 items-center justify-center">
-          <MemberBtn variant="primary"/>
+          <MemberBtn variant="primary" />
         </div>
       </div>
 

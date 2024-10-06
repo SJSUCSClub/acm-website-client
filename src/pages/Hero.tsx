@@ -116,35 +116,52 @@ const Hero = () => {
         </div>
 
         <div className="md:text-lg text-[3vw] text-center transform md:-translate-y-24 pb-3 flex-cols md:flex items-center place-content-center gap-5">
-
-        <SocialBtn className="w-full md:w-auto" href="https://discord.gg/Rw85ngkExu"><img
+          <SocialBtn
+            className="w-full md:w-auto"
+            href="https://discord.gg/Rw85ngkExu"
+          >
+            <img
               className="dark:invert pr-[2%] md:pr-[5%] w-[5vw] md:w-[30%] h-auto"
               src="./icons/discord.svg"
               width={0}
               height={0}
               alt={""}
             />
-            Discord</SocialBtn>
+            Discord
+          </SocialBtn>
 
-            <SocialBtn className="w-full md:w-auto" href="https://www.instagram.com/sjsuacm/"><img
+          <SocialBtn
+            className="w-full md:w-auto"
+            href="https://www.instagram.com/sjsuacm/"
+          >
+            <img
               className="dark:invert pr-[2%] md:pr-[5%] w-[5vw] md:w-[25%] h-auto"
               src="./icons/Instagram.svg"
               width={0}
               height={0}
               alt={""}
             />
-            Instagram</SocialBtn>
+            Instagram
+          </SocialBtn>
 
-            <SocialBtn className="w-full md:w-auto" href="https://www.linkedin.com/company/sjsu-computer-science-club/about/"><img
+          <SocialBtn
+            className="w-full md:w-auto"
+            href="https://www.linkedin.com/company/sjsu-computer-science-club/about/"
+          >
+            <img
               className="dark:invert pr-[2%] md:pr-[5%] w-[5vw] md:w-[25%] h-auto"
               src="./icons/logo2.svg"
               width={0}
               height={0}
               alt={""}
             />
-            Linkedin</SocialBtn>
+            Linkedin
+          </SocialBtn>
 
-          <MemberBtn variant="primary" className="shadow-md animate-[fadeIn_2s_ease-in-out] hover:scale-110 duration-300"/>
+          <MemberBtn
+            variant="primary"
+            className="shadow-md animate-[fadeIn_2s_ease-in-out] hover:scale-110 duration-300"
+          />
         </div>
 
         <div className="animate-[fadeIn_2s_ease-in-out] text-left inline flex flex-col gap-4">
@@ -170,8 +187,10 @@ const Hero = () => {
             networking opportunities.
           </div>
         </div>
-        <MemberBtn variant="tertiary" className="animate-[fadeIn_2s_ease-in-out] hover:scale-110 duration-300"/>
-
+        <MemberBtn
+          variant="tertiary"
+          className="animate-[fadeIn_2s_ease-in-out] hover:scale-110 duration-300"
+        />
       </div>
 
       <div className="border-y-2 place-items-center grid grid-cols-3 grid-rows-1 py-12">

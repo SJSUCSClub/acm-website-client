@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export interface ITextWithImageProps {
   children: React.ReactNode;
@@ -8,12 +8,14 @@ export interface ITextWithImageProps {
   imageAlt: string;
 }
 
-export const TextWithImage: React.FC<ITextWithImageProps> = ({ children,
+export const TextWithImage: React.FC<ITextWithImageProps> = ({
+  children,
   reverse = false,
   logo = false,
   imagePath,
-  imageAlt }) => (
-    <div
+  imageAlt,
+}) => (
+  <div
     className={`flex flex-col lg:flex-row items-center gap-4 lg:gap-16 ${
       reverse ? "lg:flex-row-reverse lg:text-right" : ""
     }`}
