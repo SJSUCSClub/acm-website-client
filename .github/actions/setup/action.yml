@@ -25,5 +25,4 @@ runs:
     - name: Install dependencies
       shell: bash
       run: |
-        cd server
         bun install
