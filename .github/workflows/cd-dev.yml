@@ -1,8 +1,6 @@
 name: CD-DEV
 
 on:
-    push:
-        branches: [develop]
     workflow_run:
         workflows: ["CI"]
         types:
@@ -11,6 +9,7 @@ on:
 jobs:
     deploy:
         name: Download and deploy
+        if: github.event.workflow_run.head_branch == 'develop'
         runs-on: ubuntu-latest
         env:
             BUCKET: acm-website-client
