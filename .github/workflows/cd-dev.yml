@@ -26,9 +26,16 @@ jobs:
 
             - uses: actions/download-artifact@v4
               with:
-                name: ${{ env.BUILD_ARTIFACT }}
-                path: ./dist
+                name: dist
+                path: ./
+                github-token: ${{ github.token }}
+                repository: ${{ github.repository }}
+                run-id: ${{ github.event.workflow_run.id }}
+
+            - name: Unzip dist
+              run: |
+                unzip ./dist.zip -d ./dist
 
             - name: Upload to s3
               run: |
-                aws s3 sync --delete ${{ env.BUILD_ARTIFACT }} s3://${{ env.BUCKET }} 
+                aws s3 sync --delete ./dist s3://${{ env.BUCKET }} 
