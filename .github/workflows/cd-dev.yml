@@ -38,4 +38,4 @@ jobs:
 
             - name: Upload to s3
               run: |
-                aws s3 sync --delete ./dist s3://${{ env.BUCKET }} 
+                aws s3 sync --delete ./dist s3://${{ env.BUCKET }}
