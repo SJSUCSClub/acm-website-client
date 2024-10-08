@@ -1,4 +1,4 @@
-name: PR
+name: CI
 
 on:
     push:
@@ -60,4 +60,9 @@ jobs:
 
             - name: Build
               run: |
-                bun run build 
+                bun run build
+            
+            - uses: actions/upload-artifact@v4
+              with:
+                name: dist
+                path: ./dist
