@@ -1,8 +1,6 @@
 import Card from "../../atoms/card";
 import React from "react";
 
-type Variant = "primary" | "secondary" | "tertiary" | "ghost";
-
 interface ITestimonialCardProps {
   text: string;
   name: string;

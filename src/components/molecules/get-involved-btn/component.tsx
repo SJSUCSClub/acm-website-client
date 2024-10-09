@@ -1,10 +1,9 @@
 import { Btn } from "../../atoms/btn";
 
-export interface IGetInvolvedBtnProps
-  extends Omit<
-    React.ComponentProps<typeof Btn>,
-    "variant" | "children" | "href"
-  > {}
+export type IGetInvolvedBtnProps = Omit<
+  React.ComponentProps<typeof Btn>,
+  "variant" | "children" | "href"
+>;
 
 export const GetInvolvedBtn: React.FC<IGetInvolvedBtnProps> = ({
   className,
