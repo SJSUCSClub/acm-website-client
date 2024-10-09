@@ -1,6 +1,6 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
-const FAQ = () => {
+export const Faq: React.FC = () => {
   const questions = [
     {
       question: "Who's allowed to join this club?",
@@ -80,5 +80,3 @@ const FAQ = () => {
     </>
   );
 };
-
-export default FAQ;

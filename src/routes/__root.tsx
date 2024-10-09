@@ -1,15 +1,15 @@
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
-import { createRootRoute, Outlet } from '@tanstack/react-router'
-import { TanStackRouterDevtools } from '@tanstack/router-devtools'
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { createRootRoute, Outlet } from "@tanstack/react-router";
+import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 
 import "../globals.css";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
-import FAQ from "../components/FAQ";
+import Footer from "../components/atoms/footer";
+import Navbar from "../components/organisms/navbar";
+import Faq from "../components/organisms/faq";
 import "acm-cs-sjsu-hero-component/dist/styles.css";
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient();
 
 export const Route = createRootRoute({
   component: () => (
@@ -18,12 +18,12 @@ export const Route = createRootRoute({
         <Navbar />
         <Outlet />
         <div className="flex">
-          <FAQ />
+          <Faq />
         </div>
         <Footer />
       </div>
       <ReactQueryDevtools initialIsOpen={false} />
-      {process.env.NODE_ENV === 'development' && <TanStackRouterDevtools />}
+      {process.env.NODE_ENV === "development" && <TanStackRouterDevtools />}
     </QueryClientProvider>
   ),
-})
+});

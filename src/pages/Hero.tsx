@@ -1,11 +1,12 @@
 import ACMCSHero from "acm-cs-sjsu-hero-component";
-import { Link } from "@tanstack/react-router";
-import GetInvolvedCard from "../components/GetInvolvedCard";
-import SpotLightCard from "../components/SpotlightCard";
-import TestimonialCard from "../components/TestimonialCard";
+import GetInvolvedCard from "../components/molecules/get-involved-card";
+import SpotLightCard from "../components/molecules/spotlight-card";
+import TestimonialCard from "../components/molecules/testimonial-card";
 
 import { useState } from "react";
-import GetInvolvedButton from "../components/ButtonGetInvolved";
+import MemberBtn from "../components/molecules/member-btn";
+import GetInvolvedBtn from "../components/molecules/get-involved-btn";
+import SocialBtn from "../components/molecules/social-btn";
 
 const spotlights: ISpotlight[] = [
   {
@@ -114,11 +115,9 @@ const Hero = () => {
           <ACMCSHero />
         </div>
 
-        <div className="animate-[fadeIn_2s_ease-in-out] md:text-lg text-[3vw] text-center transform md:-translate-y-24 pb-3 duration-300 flex-cols md:flex items-center place-content-center gap-5">
-          <a
-            style={{}}
-            className="justify-center relative font-semibold transition ease-in-out hover:text-white hover:scale-110 shadow-md flex  border-[#b4c9d9] border-2 rounded-3xl py-2 px-4 bg-[#87adcd] text-[#c1d6e6]"
-            target="_blank"
+        <div className="md:text-lg text-[3vw] text-center transform md:-translate-y-24 pb-3 flex-cols md:flex items-center place-content-center gap-5">
+          <SocialBtn
+            className="w-full md:w-auto"
             href="https://discord.gg/Rw85ngkExu"
           >
             <img
@@ -129,11 +128,10 @@ const Hero = () => {
               alt={""}
             />
             Discord
-          </a>
+          </SocialBtn>
 
-          <a
-            className="justify-center relative font-semibold transition ease-in-out hover:text-white hover:scale-110 shadow-md flex border-[#b4c9d9] border-2 rounded-3xl py-2 px-4 bg-[#87adcd] text-[#c1d6e6] "
-            target="_blank"
+          <SocialBtn
+            className="w-full md:w-auto"
             href="https://www.instagram.com/sjsuacm/"
           >
             <img
@@ -144,11 +142,10 @@ const Hero = () => {
               alt={""}
             />
             Instagram
-          </a>
+          </SocialBtn>
 
-          <a
-            className="justify-center relative font-semibold transition ease-in-out hover:text-white hover:scale-110 shadow-md flex  border-[#b4c9d9] border-2 rounded-3xl py-2 px-4 bg-[#87adcd] text-[#c1d6e6]"
-            target="_blank"
+          <SocialBtn
+            className="w-full md:w-auto"
             href="https://www.linkedin.com/company/sjsu-computer-science-club/about/"
           >
             <img
@@ -159,22 +156,12 @@ const Hero = () => {
               alt={""}
             />
             Linkedin
-          </a>
+          </SocialBtn>
 
-          <a
-            className="justify-center relative transition font-bold ease-in-out hover:text-white hover:scale-110 shadow-md flex  border-[#ecd79c] border-2 rounded-3xl py-2 px-4 bg-[#f3c954] text-white"
-            target="_blank"
-            href="https://docs.google.com/forms/d/e/1FAIpQLSf1KNg9T5sPAM9EtOm3i_bQctlq81b7QIns1uNkWtlSCpzOvg/viewform"
-          >
-            Become a Member
-            <img
-              className="pl-[2%] w-[4vw] md:w-[22px] h-auto"
-              src="./icons/right-chevron.svg"
-              width={0}
-              height={0}
-              alt={""}
-            />
-          </a>
+          <MemberBtn
+            variant="primary"
+            className="shadow-md animate-[fadeIn_2s_ease-in-out] hover:scale-110 duration-300"
+          />
         </div>
 
         <div className="animate-[fadeIn_2s_ease-in-out] text-left inline flex flex-col gap-4">
@@ -199,14 +186,11 @@ const Hero = () => {
             leaders like Apple, Tesla, and <b>Google</b> for exclusive
             networking opportunities.
           </div>
-
-          <Link
-            to="/about"
-            className="flex text-[#1a6096] w-40 h-[5%]"
-          >
-            Become a member {">"}
-          </Link>
         </div>
+        <MemberBtn
+          variant="tertiary"
+          className="animate-[fadeIn_2s_ease-in-out] hover:scale-110 duration-300"
+        />
       </div>
 
       <div className="border-y-2 place-items-center grid grid-cols-3 grid-rows-1 py-12">
@@ -315,7 +299,7 @@ const Hero = () => {
           priceStyling={freePlan.priceStyling}
           textList={freePlan.textList}
           buttonText={freePlan.buttonText}
-          buttonStyling={freePlan.buttonStyling}
+          buttonStyling="ghost"
         />
         <GetInvolvedCard
           plan={semesterPlan.plan}
@@ -324,7 +308,7 @@ const Hero = () => {
           priceStyling={semesterPlan.priceStyling}
           textList={semesterPlan.textList}
           buttonText={semesterPlan.buttonText}
-          buttonStyling={semesterPlan.buttonStyling}
+          buttonStyling="primary"
         />
         <GetInvolvedCard
           plan={annualPlan.plan}
@@ -333,11 +317,11 @@ const Hero = () => {
           priceStyling={annualPlan.priceStyling}
           textList={annualPlan.textList}
           buttonText={annualPlan.buttonText}
-          buttonStyling={annualPlan.buttonStyling}
+          buttonStyling="secondary"
         />
       </div>
       <div className="flex justify-center items-center pt-12 ">
-        <GetInvolvedButton />
+        <GetInvolvedBtn />
       </div>
     </div>
   );

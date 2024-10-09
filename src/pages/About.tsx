@@ -1,7 +1,7 @@
 import React from "react";
-import OfficerCard from "../components/OfficerCard";
-import TextWithImage from "../components/TextWithImage";
-import MemberButton from "../components/buttons/MemberButton";
+import OfficerCard from "../components/molecules/officer-card";
+import TextWithImage from "../components/atoms/text-with-image";
+import { MemberBtn } from "../components/molecules/member-btn";
 
 const developers = [
   {
@@ -262,7 +262,7 @@ const page = () => {
         </TextWithImage>
 
         <div className="flex gap-4 items-center justify-center">
-          <MemberButton />
+          <MemberBtn variant="primary" />
         </div>
       </div>
 

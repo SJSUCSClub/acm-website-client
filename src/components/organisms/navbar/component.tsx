@@ -2,15 +2,15 @@ import React, { useState } from "react";
 
 import Logo from "/Logo.png";
 
-import LinkCard from "./LinkCard";
+import LinkCard from "../../atoms/link-card";
+import Btn from "../../atoms/btn";
 
-const Navbar = () => {
+export const NavBar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
-
   return (
     <div className="navbar z-10 sticky w-full">
       <div className="flex bg-white px-[5%] py-4 border-b-4 w-full">
@@ -28,33 +28,34 @@ const Navbar = () => {
         </div>
 
         <div className="md:hidden place-content-center items-center">
-          <button
+          <Btn
+            variant="tertiary"
             onClick={handleClick}
-            className="flex flex-col justify-center items-center"
+            className="flex flex-col justify-center items-center gap-0"
           >
             <span
               className={`bg-black block transition-all duration-300 ease-out 
-                                h-1 w-9 rounded-sm ${
-                                  isOpen
-                                    ? "rotate-45 translate-y-2"
-                                    : "-translate-y-0.5"
-                                }`}
+                              h-1 w-9 rounded-sm ${
+                                isOpen
+                                  ? "rotate-45 translate-y-2"
+                                  : "-translate-y-0.5"
+                              }`}
             ></span>
             <span
               className={`bg-black block transition-all duration-300 ease-out 
-                                h-1 w-9 rounded-sm my-1 ${
-                                  isOpen ? "opacity-0" : "opacity-100"
-                                }`}
+                              h-1 w-9 rounded-sm my-1 ${
+                                isOpen ? "opacity-0" : "opacity-100"
+                              }`}
             ></span>
             <span
               className={`bg-black block transition-all duration-300 ease-out 
-                                h-1 w-9 rounded-sm ${
-                                  isOpen
-                                    ? "-rotate-45 -translate-y-2"
-                                    : "translate-y-0.5"
-                                }`}
+                              h-1 w-9 rounded-sm ${
+                                isOpen
+                                  ? "-rotate-45 -translate-y-2"
+                                  : "translate-y-0.5"
+                              }`}
             ></span>
-          </button>
+          </Btn>
         </div>
       </div>
       <div
@@ -71,4 +72,3 @@ const Navbar = () => {
     </div>
   );
 };
-export default Navbar;
