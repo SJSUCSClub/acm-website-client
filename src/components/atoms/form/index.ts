@@ -6,4 +6,3 @@ export { FormControl } from "./component";
 export { FormDescription } from "./component";
 export { FormMessage } from "./component";
 export { FormField } from "./component";
-export { useFormField } from "./component";
