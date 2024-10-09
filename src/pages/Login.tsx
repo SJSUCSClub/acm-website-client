@@ -22,8 +22,8 @@ const formSchema = z.object({
   password: z.string().min(8, { message: "Incorrect password" }),
 });
 
-export default function Login() {
-  const [showPassword, setShowPassword] = useState(false);
+export default function PasswordField() {
+  const [inputType, setInputType] = useState("password");
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -32,6 +32,10 @@ export default function Login() {
       password: "",
     },
   });
+
+  const toggleInputType = () => {
+    setInputType(inputType === "password" ? "text" : "password");
+  };
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log("Login attempted with:", values);
@@ -74,25 +78,25 @@ export default function Login() {
                       <Input
                         {...field}
                         id="password"
-                        type={showPassword ? "text" : "password"}
+                        type={inputType}
                         placeholder="Password"
                         className="mt-1 block w-full px-3 py-2 bg-gray-50 rounded-[12px] border-2 text-sm shadow-sm placeholder-gray-400 
                           focus:outline-none focus:border-yellow-500 focus:ring-yellow-500 pr-10"
                       />
                       <button
                         type="button"
-                        onClick={() => setShowPassword(!showPassword)}
+                        onClick={toggleInputType}
                         className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 focus:outline-none "
                       >
-                        {showPassword ? (
+                        {inputType === "password" ? (
                           <img
-                            src={Eye}
+                            src={EyeOff}
                             alt="Show password"
                             className="h-5 w-5"
                           />
                         ) : (
                           <img
-                            src={EyeOff}
+                            src={Eye}
                             alt="Hide password"
                             className="h-5 w-5"
                           />
