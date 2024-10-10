@@ -119,9 +119,8 @@ const page = () => {
   return (
     <div className="about text-text my-10 px-[15%]">
       <Input
-        label="Major"
-        placeholder="Major"
-        footer="All majors are welcome! :)"
+        label="LinkedIn"
+        placeholder="https://www.linkedin.com/in/john-doe/"
         required={false}
         icon="/icons/link.svg"
       />
