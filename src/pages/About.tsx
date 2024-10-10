@@ -4,6 +4,7 @@ import TextWithImage from "../components/atoms/text-with-image";
 import { MemberBtn } from "../components/molecules/member-btn";
 import { Input } from "../components/atoms/input";
 import { TextArea } from "../components/atoms/text-area";
+import Dropdown from "../components/atoms/dropdown";
 
 const developers = [
   {
@@ -124,6 +125,11 @@ const page = () => {
         required={true}
       />
       <TextArea label="Bio" placeholder="This is my bio!" required={false} />
+      <Dropdown
+        label="Pronouns"
+        required={false}
+        options={["Ask Me", "He/Him", "She/Her", "They/Them", "Other"]}
+      />
       <div className="intro space-y-4">
         <h1 className="text-4xl font-bold">
           What is <span className="text-primary">ACM</span> at{" "}
