@@ -122,7 +122,8 @@ const page = () => {
         label="Major"
         placeholder="Major"
         footer="All majors are welcome! :)"
-        required={true}
+        required={false}
+        icon="/icons/link.svg"
       />
       <TextArea label="Bio" placeholder="This is my bio!" required={false} />
       <Dropdown

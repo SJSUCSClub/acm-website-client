@@ -5,6 +5,7 @@ export interface IInputProps
   label: string;
   footer?: string;
   required: boolean;
+  icon?: string;
 }
 
 export const Input: React.FC<IInputProps> = ({
@@ -12,10 +13,11 @@ export const Input: React.FC<IInputProps> = ({
   footer = "",
   placeholder,
   required,
+  icon = "",
   className,
   ...props
 }) => (
-  <div>
+  <div className="relative">
     <div className="flex">
       <p className="text-neutral font-semibold mb-2">{label}</p>
       {required && <p className="text-red-500">*</p>}
@@ -28,6 +30,11 @@ export const Input: React.FC<IInputProps> = ({
       placeholder={placeholder}
       {...props}
     />
+    {icon !== "" && (
+      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+        <img src={icon} alt="icon" className="h-5 w-5" />
+      </div>
+    )}
     {footer !== "" && <p className="text-neutral mb-2">{footer}</p>}
   </div>
 );
