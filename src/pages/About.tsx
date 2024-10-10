@@ -116,7 +116,12 @@ const officers = [
 const page = () => {
   return (
     <div className="about text-text my-10 px-[15%]">
-      <Input label="Major" placeholder="Major" footer="All majors are welcome! :)" required={true}/>
+      <Input
+        label="Major"
+        placeholder="Major"
+        footer="All majors are welcome! :)"
+        required={true}
+      />
       <div className="intro space-y-4">
         <h1 className="text-4xl font-bold">
           What is <span className="text-primary">ACM</span> at{" "}
