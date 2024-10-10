@@ -1,0 +1,28 @@
+name: Setup
+description: "Setup bun"
+
+inputs:
+  os:
+    description: "Runner os"
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Setup Bun
+      uses: oven-sh/setup-bun@v1
+      with:
+        bun-version: latest
+
+    - name: Cache Bun dependencies
+      uses: actions/cache@v4
+      with:
+        path: ~/.bun/install/cache
+        key: ${{ inputs.os }}-bun-${{ hashFiles('**/bun.lockb') }} 
+        restore-keys: |
+          ${{ inputs.os }}-bun-
+
+    - name: Install dependencies
+      shell: bash
+      run: |
+        bun install

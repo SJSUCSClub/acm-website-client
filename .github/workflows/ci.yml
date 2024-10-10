@@ -1,0 +1,68 @@
+name: CI
+
+on:
+    push:
+    pull_request:
+        types: [opened, reopened, synchronize]
+
+jobs:
+    lint:
+        name: Lint check
+        runs-on: ubuntu-latest
+        steps:  
+            - uses: actions/checkout@v4
+              with:
+                ref: ${{ github.event.pull_request.head.ref }}
+            
+            - uses: ./.github/actions/setup
+              with:
+                os: ${{ runner.os }}
+            
+            - name: Lint fix
+              run: |
+                bun lint --fix
+            
+            - name: Commit lint fix
+              run: |
+                git config --global user.name "github-actions[bot]"
+                git config --global user.email "github-actions[bot]@users.noreply.github.com"
+                if ! git diff --exit-code > /dev/null
+                then
+                    git commit -a -m "lint fix"
+                    git push
+                fi
+
+            - name: Run linter
+              run: |
+                bun run lint
+
+    typecheck:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            
+            - uses: ./.github/actions/setup
+              with:
+                os: ${{ runner.os }}
+
+            - name: Run typecheck
+              run: |
+                bun run typecheck
+
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            
+            - uses: ./.github/actions/setup
+              with:
+                os: ${{ runner.os }}
+
+            - name: Build
+              run: |
+                bun run build
+            
+            - uses: actions/upload-artifact@v4
+              with:
+                name: ${{ vars.BUILD_ARTIFACT }} 
+                path: ./${{ vars.BUILD_ARTIFACT }} 
