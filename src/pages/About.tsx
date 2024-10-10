@@ -3,6 +3,7 @@ import OfficerCard from "../components/molecules/officer-card";
 import TextWithImage from "../components/atoms/text-with-image";
 import { MemberBtn } from "../components/molecules/member-btn";
 import { Input } from "../components/atoms/input";
+import { TextArea } from "../components/atoms/text-area";
 
 const developers = [
   {
@@ -122,6 +123,7 @@ const page = () => {
         footer="All majors are welcome! :)"
         required={true}
       />
+      <TextArea label="Bio" placeholder="This is my bio!" required={false} />
       <div className="intro space-y-4">
         <h1 className="text-4xl font-bold">
           What is <span className="text-primary">ACM</span> at{" "}
