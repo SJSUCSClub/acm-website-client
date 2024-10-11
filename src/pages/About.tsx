@@ -2,9 +2,7 @@ import React from "react";
 import OfficerCard from "../components/molecules/officer-card";
 import TextWithImage from "../components/atoms/text-with-image";
 import { MemberBtn } from "../components/molecules/member-btn";
-import { Input } from "../components/atoms/input";
-import { TextArea } from "../components/atoms/text-area";
-import Dropdown from "../components/atoms/dropdown";
+import ProgressBar from "../components/molecules/progress-bar";
 
 const developers = [
   {
