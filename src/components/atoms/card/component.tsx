@@ -1,4 +1,4 @@
-export interface ICardProps extends React.ButtonHTMLAttributes<HTMLDivElement> {
+export interface ICardProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
 }
 

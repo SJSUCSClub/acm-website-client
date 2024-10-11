@@ -2,7 +2,10 @@ import React from "react";
 import OfficerCard from "../components/molecules/officer-card";
 import TextWithImage from "../components/atoms/text-with-image";
 import { MemberBtn } from "../components/molecules/member-btn";
-import ProgressBar from "../components/molecules/progress-bar";
+import OnboardingCard from "../components/molecules/onboarding-card";
+import Dropdown from "../components/atoms/dropdown";
+import Input from "../components/atoms/input";
+import Btn from "../components/atoms/btn";
 
 const developers = [
   {
@@ -116,6 +119,51 @@ const officers = [
 const page = () => {
   return (
     <div className="about text-text my-10 px-[15%]">
+      <OnboardingCard
+        header={
+          <span>
+            Welcome <strong>Naya</strong>
+          </span>
+        }
+        subtitle="We'd love to know a bit more about you"
+      >
+        <Dropdown
+          required={false}
+          label="Status"
+          options={["Undergraduate", "Graduate"]}
+        />
+        <Dropdown
+          required={true}
+          label="Year"
+          options={["Freshman", "Sophomore", "Junior", "Senior", "Other"]}
+          footer={'Select "Other" if you are not an undergraduate student'}
+        />
+        <Input
+          required={false}
+          label="Major"
+          placeholder="Major"
+          footer="All majors are welcome! :)"
+        />
+        <Dropdown
+          required={false}
+          label="Purpose"
+          options={["Networking", "Coding Workshops"]}
+          footer={"Tell us what brings you to the ACM club"}
+        />
+        <Dropdown
+          required={false}
+          label="Team Interest"
+          options={["Design", "Frontend", "Backend"]}
+          footer={
+            "This shows that you're interested in joining a team and does not guarantee that you will be put on one. Teams are only for paid members."
+          }
+        />
+        <div className="flex justify-center mt-4">
+          <Btn variant="primary" className="justify-center">
+            Continue
+          </Btn>
+        </div>
+      </OnboardingCard>
       <div className="intro space-y-4">
         <h1 className="text-4xl font-bold">
           What is <span className="text-primary">ACM</span> at{" "}
