@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-
 import Footer from "../components/atoms/footer";
 
 import GoogleSignInBtn from "../components/molecules/google-sign-in-btn";
