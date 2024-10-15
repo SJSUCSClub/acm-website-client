@@ -1,6 +1,6 @@
 import Footer from "../components/atoms/footer";
 
-import GoogleSignInBtn from "../components/molecules/google-sign-in-btn";
+import GoogleLogInBtn from "../components/molecules/google-log-in-btn";
 import { motion } from "framer-motion";
 
 export default function SignIn() {
@@ -26,16 +26,16 @@ export default function SignIn() {
           <h2 className="mt-6 text-3xl font-extrabold text-gray-900">
             Welcome Back
           </h2>
-          <p className="mt-2 text-sm text-gray-600">Sign in to your account</p>
+          <p className="mt-2 text-sm text-gray-600">Log in to your account</p>
         </motion.div>
 
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-          <GoogleSignInBtn />
+          <GoogleLogInBtn />
         </motion.div>
 
         <div className="mt-6 text-center">
           <a href="#" className="text-sm text-indigo-600 hover:text-indigo-500">
-            Need help signing in?
+            Need help logging in?
           </a>
         </div>
       </motion.div>
