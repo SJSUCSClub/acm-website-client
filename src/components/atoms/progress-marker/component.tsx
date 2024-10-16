@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 type Variant = "incomplete" | "complete" | "current";
 
 export interface IProgressMarkerProps
@@ -9,15 +7,14 @@ export interface IProgressMarkerProps
 
 export const ProgressMarker: React.FC<IProgressMarkerProps> = ({
   variant,
-  className,
   ...props
 }) => {
   let color = ["#F3C954", "#F3C954"];
-  if (variant === "complete") {
+  if (variant === "current") {
     color = ["#F3C954", "#FFFFFF"];
   } else if (variant === "incomplete") {
     color = ["#A4A4A4", "#A4A4A4"];
-  } else if (variant === "current") {
+  } else if (variant === "complete") {
     color = ["#F3C954", "#F3C954"];
   }
   return (

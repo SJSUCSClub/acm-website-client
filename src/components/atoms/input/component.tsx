@@ -19,12 +19,12 @@ export const Input: React.FC<IInputProps> = ({
 }) => (
   <div className="relative">
     <div className="flex">
-      <p className="text-neutral font-semibold mb-2">{label}</p>
+      <p className="text-neutral font-semibold mb-2 text-[14px]">{label}</p>
       {required && <p className="text-red-500">*</p>}
     </div>
     <input
       className={cn(
-        "rounded-xl bg-border text-text px-[16px] py-[10px] focus:outline-none w-full placeholder-neutral mb-2 border-border-hovered border-2",
+        "rounded-xl bg-border text-text px-[16px] py-[10px] focus:outline-none w-full placeholder-neutral mb-2 border-border-hovered border-2 text-[14px]",
         className,
       )}
       placeholder={placeholder}
@@ -35,6 +35,6 @@ export const Input: React.FC<IInputProps> = ({
         <img src={icon} alt="icon" className="h-5 w-5" />
       </div>
     )}
-    {footer !== "" && <p className="text-neutral mb-2">{footer}</p>}
+    {footer !== "" && <p className="text-neutral mb-2 text-[14px]">{footer}</p>}
   </div>
 );

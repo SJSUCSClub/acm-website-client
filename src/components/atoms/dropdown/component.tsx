@@ -19,12 +19,12 @@ export const Dropdown: React.FC<IDropdownProps> = ({
   <div>
     <div className="relative">
       <div className="flex">
-        <p className="text-neutral font-semibold mb-2">{label}</p>
+        <p className="text-neutral font-semibold mb-2 text-[14px]">{label}</p>
         {required && <p className="text-red-500">*</p>}
       </div>
       <select
         className={cn(
-          "rounded-xl bg-border text-text px-[16px] py-[10px] focus:outline-none w-full placeholder-neutral mb-2 border-border-hovered border-2 appearance-none",
+          "rounded-xl bg-border text-text px-[16px] py-[10px] focus:outline-none w-full placeholder-neutral mb-2 border-border-hovered border-2 appearance-none text-[14px]",
           className,
         )}
         {...props}
@@ -48,6 +48,6 @@ export const Dropdown: React.FC<IDropdownProps> = ({
         </svg>
       </div>
     </div>
-    {footer !== "" && <p className="text-neutral mb-2">{footer}</p>}
+    {footer !== "" && <p className="text-neutral mb-2 text-[14px]">{footer}</p>}
   </div>
 );
