@@ -85,11 +85,20 @@ const Page = () => {
     }
   }
 
+  function backPage() {
+    console.log(user);
+    setPage(page - 1);
+    setProgress(progress - 0.5);
+  }
+
   function renderContinueButton(text: string = "Continue") {
     return (
       <>
         <br />
-        <div className="flex justify-center">
+        <div className="flex justify-between">
+          <Btn variant="primary" disabled={page < 1} onClick={() => backPage()}>
+            Back
+          </Btn>
           <Btn variant="primary" onClick={() => nextPage()}>
             {text}
           </Btn>
