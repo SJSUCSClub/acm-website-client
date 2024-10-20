@@ -76,9 +76,13 @@ const Page = () => {
   };
 
   function nextPage() {
-    console.log(user);
-    setPage(page + 1);
-    setProgress(progress + 0.5);
+    if (page < 2) {
+      console.log(user);
+      setPage(page + 1);
+      setProgress(progress + 0.5);
+    } else {
+      window.location.href = "/";
+    }
   }
 
   function renderContinueButton(text: string = "Continue") {
