@@ -5,6 +5,7 @@ import ProgressBar from "../components/molecules/progress-bar";
 import { useState } from "react";
 import Btn from "../components/atoms/btn";
 import TextArea from "../components/atoms/text-area";
+import RightArrow from "/about/rightarrow.svg";
 
 type tempUserType = {
   name: string;
@@ -96,11 +97,17 @@ const Page = () => {
       <>
         <br />
         <div className="flex justify-between">
-          <Btn variant="primary" disabled={page < 1} onClick={() => backPage()}>
-            Back
+          <Btn
+            variant="primary"
+            className="bg-transparent text-primary border-none pl-0 hover:bg-transparent disabled:bg-transparent"
+            disabled={page < 1}
+            onClick={() => backPage()}
+          >
+            {"< Back"}
           </Btn>
           <Btn variant="primary" onClick={() => nextPage()}>
-            {text}
+            <span className="">{text}</span>
+            <img src={RightArrow} alt="right arrow" />
           </Btn>
         </div>
       </>
