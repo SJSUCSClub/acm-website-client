@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "/public/Logo.png";
+import Logo from "../../../Logo.png";
 
 export const Footer: React.FC = () => (
   <footer className="flex flex-col md:flex-row gap-y-4 justify-between items-center bg-white text-gray-400 text-center bottom-0 max-w-full place-content-center p-5">

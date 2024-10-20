@@ -28,19 +28,13 @@ export const ProgressBar: React.FC<IProgressBarProps> = ({
         value={value}
       />
       <div className="absolute top-[-8px] left-0">
-        <ProgressMarker variant={checkVar(0)} />
-      </div>
-      <div className="absolute top-[-8px] left-[25%]">
-        <ProgressMarker variant={checkVar(0.25)} />
+        <ProgressMarker variant={checkVar(0.0)} />
       </div>
       <div className="absolute top-[-8px] left-[50%]">
         <ProgressMarker variant={checkVar(0.5)} />
       </div>
-      <div className="absolute top-[-8px] left-[75%]">
-        <ProgressMarker variant={checkVar(0.75)} />
-      </div>
       <div className="absolute top-[-8px] left-[100%]">
-        <ProgressMarker variant={checkVar(1)} />
+        <ProgressMarker variant={checkVar(1.0)} />
       </div>
     </div>
   );

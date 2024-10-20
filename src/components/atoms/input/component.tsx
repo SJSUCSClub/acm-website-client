@@ -31,8 +31,8 @@ export const Input: React.FC<IInputProps> = ({
       {...props}
     />
     {icon !== "" && (
-      <div className="pointer-events-none absolute inset-y-0 right-0 top-6 flex items-center pr-3">
-        <img src={icon} alt="icon" className="h-5 w-5" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 top-5 flex items-center pr-3">
+        <img src={icon} alt="icon" className="h-4 w-4" />
       </div>
     )}
     {footer !== "" && <p className="text-neutral mb-2 text-[14px]">{footer}</p>}
