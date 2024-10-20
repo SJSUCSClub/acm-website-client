@@ -81,13 +81,13 @@ const Page = () => {
     setProgress(progress + 0.5);
   }
 
-  function renderContinueButton() {
+  function renderContinueButton(text: string = "Continue") {
     return (
       <>
         <br />
         <div className="flex justify-center">
           <Btn variant="primary" onClick={() => nextPage()}>
-            Continue
+            {text}
           </Btn>
         </div>
       </>
@@ -202,7 +202,17 @@ const Page = () => {
               {renderContinueButton()}
             </OnboardingCard>
           )}
-
+          {page === 2 && (
+            <OnboardingCard
+              image="/src/assets/trophy.svg"
+              header=""
+              boldHeader="Congratulations!"
+              subtitle="You're all set! Welcome to the ACM Club at San José State University. Make the most out of your experience with us."
+            >
+              <div></div>
+              {renderContinueButton("Start Exploring")}
+            </OnboardingCard>
+          )}
           <br />
         </div>
       </div>

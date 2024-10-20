@@ -25,7 +25,9 @@ export const OnboardingCard: React.FC<IOnboardingCardProps> = ({
     }
   >
     <div className="text-center">
-      {image !== "" && <img src={image} alt={subtitle} />}
+      <div className="flex justify-center pb-6">
+        {image !== "" && <img src={image} alt={subtitle} />}
+      </div>
       <p className="text-[20px]">
         {header}
         <strong> {boldHeader}</strong>
