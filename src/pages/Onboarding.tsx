@@ -15,22 +15,17 @@ const tempUser: tempUserType = {
   name: "Naya",
 };
 
-const statusOptions: Array<string> = ["Undergraduate", "Graduate", "Other"];
-const yearOptions: Array<string> = [
-  "Freshman",
-  "Sophomore",
-  "Junior",
-  "Senior",
-  "Other",
+const educationLevelOptions: Array<string> = ["Undergraduate", "Graduate"];
+
+const tempMajorOptions: Array<string> = [
+  "Computer Science",
+  "Data Science",
+  "Computer Engineering",
+  "Software Engineering",
 ];
+
 const purposeOptions: Array<string> = ["Networking", "Other"];
-const interestOptions: Array<string> = [
-  "Frontend",
-  "Backend",
-  "Design",
-  "Marketing",
-  "Other",
-];
+
 const pronounOptions: Array<string> = [
   "Ask Me!",
   "She/Her",
@@ -39,11 +34,11 @@ const pronounOptions: Array<string> = [
 ];
 
 type User = {
-  status: string;
-  year: string;
+  educationLevel: string;
   major: string;
+  gradDate: Date;
   purpose: string;
-  interest: string;
+  interests: Array<string>;
   pronouns: string;
   bio: string;
   discord: string;
@@ -58,11 +53,11 @@ const Page = () => {
   const [page, setPage] = useState<number>(0);
 
   const [user, setUser] = useState<User>({
-    status: statusOptions[0],
-    year: yearOptions[0],
+    educationLevel: educationLevelOptions[0],
     major: "",
+    gradDate: new Date(),
     purpose: purposeOptions[0],
-    interest: interestOptions[0],
+    interests: [],
     pronouns: pronounOptions[0],
     bio: "",
     discord: "",
@@ -133,24 +128,17 @@ const Page = () => {
               <Dropdown
                 label="Status"
                 required={false}
-                options={statusOptions}
+                options={educationLevelOptions}
                 onChange={(e) => handleChange("status", e.target.value)}
               />
               <Dropdown
-                label="Year"
-                required
-                footer={
-                  'Select "Other" if you are not an undergraduate student'
-                }
-                options={yearOptions}
-                onChange={(e) => handleChange("year", e.target.value)}
-              />
-              <Input
                 label="Major"
                 required={false}
                 footer="All majors are welcome :)"
+                options={tempMajorOptions}
                 onChange={(e) => handleChange("major", e.target.value)}
               />
+              {/*add grad date*/}
               <Dropdown
                 label="Purpose"
                 required={false}
@@ -158,13 +146,7 @@ const Page = () => {
                 footer="Tell us what brings you to the ACM club"
                 onChange={(e) => handleChange("purpose", e.target.value)}
               />
-              <Dropdown
-                label="Team Interest"
-                required={false}
-                options={interestOptions}
-                footer="This shows that you're interested in joining a team and does not guarantee that you will be put on one. Teams are only for paid members."
-                onChange={(e) => handleChange("interest", e.target.value)}
-              />
+              {/*add interests multi select*/}
               {renderContinueButton()}
             </OnboardingCard>
           )}
