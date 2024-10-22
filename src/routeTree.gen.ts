@@ -11,11 +11,17 @@
 // Import Routes
 
 import { Route as rootRoute } from "./routes/__root";
+import { Route as OnboardingImport } from "./routes/onboarding";
 import { Route as EventsImport } from "./routes/events";
 import { Route as AboutImport } from "./routes/about";
 import { Route as IndexImport } from "./routes/index";
 
 // Create/Update Routes
+
+const OnboardingRoute = OnboardingImport.update({
+  path: "/onboarding",
+  getParentRoute: () => rootRoute,
+} as any);
 
 const EventsRoute = EventsImport.update({
   path: "/events",
@@ -57,6 +63,13 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof EventsImport;
       parentRoute: typeof rootRoute;
     };
+    "/onboarding": {
+      id: "/onboarding";
+      path: "/onboarding";
+      fullPath: "/onboarding";
+      preLoaderRoute: typeof OnboardingImport;
+      parentRoute: typeof rootRoute;
+    };
   }
 }
 
@@ -66,12 +79,14 @@ export interface FileRoutesByFullPath {
   "/": typeof IndexRoute;
   "/about": typeof AboutRoute;
   "/events": typeof EventsRoute;
+  "/onboarding": typeof OnboardingRoute;
 }
 
 export interface FileRoutesByTo {
   "/": typeof IndexRoute;
   "/about": typeof AboutRoute;
   "/events": typeof EventsRoute;
+  "/onboarding": typeof OnboardingRoute;
 }
 
 export interface FileRoutesById {
@@ -79,14 +94,15 @@ export interface FileRoutesById {
   "/": typeof IndexRoute;
   "/about": typeof AboutRoute;
   "/events": typeof EventsRoute;
+  "/onboarding": typeof OnboardingRoute;
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath;
-  fullPaths: "/" | "/about" | "/events";
+  fullPaths: "/" | "/about" | "/events" | "/onboarding";
   fileRoutesByTo: FileRoutesByTo;
-  to: "/" | "/about" | "/events";
-  id: "__root__" | "/" | "/about" | "/events";
+  to: "/" | "/about" | "/events" | "/onboarding";
+  id: "__root__" | "/" | "/about" | "/events" | "/onboarding";
   fileRoutesById: FileRoutesById;
 }
 
@@ -94,12 +110,14 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute;
   AboutRoute: typeof AboutRoute;
   EventsRoute: typeof EventsRoute;
+  OnboardingRoute: typeof OnboardingRoute;
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   EventsRoute: EventsRoute,
+  OnboardingRoute: OnboardingRoute,
 };
 
 export const routeTree = rootRoute
@@ -116,7 +134,8 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/about",
-        "/events"
+        "/events",
+        "/onboarding"
       ]
     },
     "/": {
@@ -127,6 +146,9 @@ export const routeTree = rootRoute
     },
     "/events": {
       "filePath": "events.tsx"
+    },
+    "/onboarding": {
+      "filePath": "onboarding.tsx"
     }
   }
 }
