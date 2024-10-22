@@ -1,6 +1,6 @@
 import React from "react";
 import { Btn } from "../../atoms/btn/component";
-import GoogleLogo from "/icons/google-color.svg";
+import GoogleLogo from "/icons/google.png";
 
 export const GoogleLogInBtn: React.FC = () => {
   const handleGoogleLogin = () => {

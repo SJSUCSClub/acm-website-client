@@ -7,7 +7,7 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ layout = "column" }) => (
   <footer
-    className={`flex flex-col ${layout === "row" ? "" : "md:flex-row"} gap-y-4 justify-between items-center bg-white text-gray-400 text-center bottom-0 max-w-full place-content-center p-5`}
+    className={`flex flex-col ${layout === "row" ? "" : "md:flex-row"} gap-y-4 justify-between items-center bg-white text-gray-400 text-center bottom-0 max-w-full place-content-center p-5 `}
   >
     <img src={Logo} alt="Logo" width={100} className="sm:h-auto" />
 
