@@ -1,8 +1,14 @@
 import React from "react";
 import Logo from "/public/Logo.png";
 
-export const Footer: React.FC = () => (
-  <footer className="flex flex-col md:flex-row gap-y-4 justify-between items-center bg-white text-gray-400 text-center bottom-0 max-w-full place-content-center p-5">
+interface FooterProps {
+  layout?: "row" | "column";
+}
+
+export const Footer: React.FC<FooterProps> = ({ layout = "column" }) => (
+  <footer
+    className={`flex flex-col ${layout === "row" ? "" : "md:flex-row"} gap-y-4 justify-between items-center bg-white text-gray-400 text-center bottom-0 max-w-full place-content-center p-5 `}
+  >
     <img src={Logo} alt="Logo" width={100} className="sm:h-auto" />
 
     <div className="text-center place-content-center max-w-[50%]">
@@ -13,7 +19,7 @@ export const Footer: React.FC = () => (
       <p className="text-center pt-2 text-sm">ACM-CS AT SJSU &#169; 2024</p>
     </div>
 
-    <div className="flex gap-x-4">
+    <div className={`flex flex-row gap-x-4`}>
       <a href="https://discord.gg/4cXE636ax4" target="blank">
         <img
           width={33}
