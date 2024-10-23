@@ -13,3 +13,12 @@ progress::-webkit-progress-value {
 progress::-moz-progress-bar {
   background-color: #f3c954; /* Color of the filled part of the progress bar */
 }
+
+.checkmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #e5e5e5;
+}

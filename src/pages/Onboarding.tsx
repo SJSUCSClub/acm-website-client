@@ -4,8 +4,8 @@ import OnboardingCard from "../components/molecules/onboarding-card";
 import ProgressBar from "../components/molecules/progress-bar";
 import { useState } from "react";
 import Btn from "../components/atoms/btn";
-import TextArea from "../components/atoms/text-area";
 import RightArrow from "/about/rightarrow.svg";
+import Select from "../components/atoms/select";
 
 type tempUserType = {
   name: string;
@@ -26,11 +26,11 @@ const tempMajorOptions: Array<string> = [
 
 const purposeOptions: Array<string> = ["Networking", "Other"];
 
-const pronounOptions: Array<string> = [
-  "Ask Me!",
-  "She/Her",
-  "He/Him",
-  "They/Them",
+const interestOptions: Array<string> = [
+  "Web Development",
+  "Machine Learning",
+  "Cloud Computing",
+  "Artificial Intelligence",
 ];
 
 type User = {
@@ -39,12 +39,8 @@ type User = {
   gradDate: Date;
   purpose: string;
   interests: Array<string>;
-  pronouns: string;
-  bio: string;
-  discord: string;
   linkedin: string;
   github: string;
-  instagram: string;
   website: string;
 };
 
@@ -58,14 +54,36 @@ const Page = () => {
     gradDate: new Date(),
     purpose: purposeOptions[0],
     interests: [],
-    pronouns: pronounOptions[0],
-    bio: "",
-    discord: "",
     linkedin: "",
     github: "",
-    instagram: "",
     website: "",
   });
+  const [selectedInterests, setSelectedInterests] = useState<string[]>([]);
+  const [selectedPurpose, setSelectedPurpose] = useState<string[]>([]);
+
+  const handleInterestChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    option: string,
+  ) => {
+    console.log(option);
+    setSelectedInterests((prevSelectedOptions) =>
+      prevSelectedOptions.includes(option)
+        ? prevSelectedOptions.filter((item) => item !== option)
+        : [...prevSelectedOptions, option],
+    );
+  };
+
+  const handlePurposeChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    option: string,
+  ) => {
+    console.log(option);
+    setSelectedPurpose((prevSelectedOptions) =>
+      prevSelectedOptions.includes(option)
+        ? prevSelectedOptions.filter((item) => item !== option)
+        : [...prevSelectedOptions, option],
+    );
+  };
 
   const handleChange = (key: string, value: string) => {
     setUser({ ...user, [key]: value });
@@ -74,6 +92,8 @@ const Page = () => {
   function nextPage() {
     if (page < 2) {
       console.log(user);
+      console.log(selectedInterests);
+      console.log(selectedPurpose);
       setPage(page + 1);
       setProgress(progress + 0.5);
     } else {
@@ -82,7 +102,6 @@ const Page = () => {
   }
 
   function backPage() {
-    console.log(user);
     setPage(page - 1);
     setProgress(progress - 0.5);
   }
@@ -126,53 +145,42 @@ const Page = () => {
               subtitle="We'd love to know a bit more about you"
             >
               <Dropdown
-                label="Status"
-                required={false}
+                label="Education"
+                required={true}
                 options={educationLevelOptions}
                 onChange={(e) => handleChange("status", e.target.value)}
               />
               <Dropdown
                 label="Major"
-                required={false}
+                required={true}
                 footer="All majors are welcome :)"
                 options={tempMajorOptions}
                 onChange={(e) => handleChange("major", e.target.value)}
               />
-              {/*add grad date*/}
-              <Dropdown
+              <Input type="date" label="Graduation Date" required={true} />
+              <Select
                 label="Purpose"
                 required={false}
                 options={purposeOptions}
                 footer="Tell us what brings you to the ACM club"
-                onChange={(e) => handleChange("purpose", e.target.value)}
+                changeFunction={handlePurposeChange}
               />
-              {/*add interests multi select*/}
+              <Select
+                label="Interest(s)"
+                multiple={true}
+                required={false}
+                options={interestOptions}
+                changeFunction={handleInterestChange}
+              />
               {renderContinueButton()}
             </OnboardingCard>
           )}
           {page === 1 && (
             <OnboardingCard
-              header="Share a bit about yourself and"
-              boldHeader="connect your social profiles"
-              subtitle="This helps us build your network within our community"
+              header="Connect your social profiles"
+              boldHeader=""
+              subtitle=""
             >
-              <Dropdown
-                label="Pronouns"
-                required={false}
-                options={pronounOptions}
-                onChange={(e) => handleChange("pronouns", e.target.value)}
-              />
-              <TextArea
-                label="Bio"
-                required={false}
-                onChange={(e) => handleChange("bio", e.target.value)}
-              />
-              <Input
-                label="Discord"
-                required={false}
-                placeholder="john.doe"
-                onChange={(e) => handleChange("discord", e.target.value)}
-              />
               <Input
                 label="LinkedIn"
                 required={false}
@@ -186,13 +194,6 @@ const Page = () => {
                 icon="/src/assets/Link.svg"
                 placeholder="https://github.com/john-doe"
                 onChange={(e) => handleChange("github", e.target.value)}
-              />
-              <Input
-                label="Instagram"
-                required={false}
-                icon="/src/assets/Link.svg"
-                placeholder="https://instagram.com/john-doe"
-                onChange={(e) => handleChange("instagram", e.target.value)}
               />
               <Input
                 label="Website"

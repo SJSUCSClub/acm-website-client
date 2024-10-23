@@ -35,7 +35,7 @@ export const Dropdown: React.FC<IDropdownProps> = ({
           </option>
         ))}
       </select>
-      <div className="pointer-events-none absolute inset-y-0 flex items-center px-2 text-gray-700 top-6 right-2">
+      <div className="pointer-events-none absolute inset-y-0 flex items-center px-2 text-gray-700 top-6 right-3">
         <svg
           width="9"
           height="15"
