@@ -2,9 +2,6 @@ import React from "react";
 import OfficerCard from "../components/molecules/officer-card";
 import TextWithImage from "../components/atoms/text-with-image";
 import { MemberBtn } from "../components/molecules/member-btn";
-import { Input } from "../components/atoms/input";
-import { TextArea } from "../components/atoms/text-area";
-import Dropdown from "../components/atoms/dropdown";
 
 const developers = [
   {
@@ -118,18 +115,6 @@ const officers = [
 const page = () => {
   return (
     <div className="about text-text my-10 px-[15%]">
-      <Input
-        label="LinkedIn"
-        placeholder="https://www.linkedin.com/in/john-doe/"
-        required={false}
-        icon="/icons/link.svg"
-      />
-      <TextArea label="Bio" placeholder="This is my bio!" required={false} />
-      <Dropdown
-        label="Pronouns"
-        required={false}
-        options={["Ask Me", "He/Him", "She/Her", "They/Them", "Other"]}
-      />
       <div className="intro space-y-4">
         <h1 className="text-4xl font-bold">
           What is <span className="text-primary">ACM</span> at{" "}

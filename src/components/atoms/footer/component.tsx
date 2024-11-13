@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "/public/Logo.png";
+import Logo from "../../../Logo.png";
 
 interface FooterProps {
   layout?: "row" | "column";

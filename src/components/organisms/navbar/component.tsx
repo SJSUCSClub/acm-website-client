@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import Logo from "/Logo.png";
+import Logo from "../../../Logo.png";
 
 import LinkCard from "../../atoms/link-card";
 import Btn from "../../atoms/btn";

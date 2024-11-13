@@ -11,12 +11,18 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as OnboardingImport } from './routes/onboarding'
 import { Route as LoginImport } from './routes/login'
 import { Route as EventsImport } from './routes/events'
 import { Route as AboutImport } from './routes/about'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
+
+const OnboardingRoute = OnboardingImport.update({
+  path: '/onboarding',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const LoginRoute = LoginImport.update({
   path: '/login',
@@ -70,6 +76,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoginImport
       parentRoute: typeof rootRoute
     }
+    '/onboarding': {
+      id: '/onboarding'
+      path: '/onboarding'
+      fullPath: '/onboarding'
+      preLoaderRoute: typeof OnboardingImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -80,6 +93,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/events': typeof EventsRoute
   '/login': typeof LoginRoute
+  '/onboarding': typeof OnboardingRoute
 }
 
 export interface FileRoutesByTo {
@@ -87,6 +101,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/events': typeof EventsRoute
   '/login': typeof LoginRoute
+  '/onboarding': typeof OnboardingRoute
 }
 
 export interface FileRoutesById {
@@ -95,14 +110,15 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/events': typeof EventsRoute
   '/login': typeof LoginRoute
+  '/onboarding': typeof OnboardingRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/events' | '/login'
+  fullPaths: '/' | '/about' | '/events' | '/login' | '/onboarding'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/events' | '/login'
-  id: '__root__' | '/' | '/about' | '/events' | '/login'
+  to: '/' | '/about' | '/events' | '/login' | '/onboarding'
+  id: '__root__' | '/' | '/about' | '/events' | '/login' | '/onboarding'
   fileRoutesById: FileRoutesById
 }
 
@@ -111,6 +127,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   EventsRoute: typeof EventsRoute
   LoginRoute: typeof LoginRoute
+  OnboardingRoute: typeof OnboardingRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
@@ -118,6 +135,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   EventsRoute: EventsRoute,
   LoginRoute: LoginRoute,
+  OnboardingRoute: OnboardingRoute,
 }
 
 export const routeTree = rootRoute
@@ -135,7 +153,8 @@ export const routeTree = rootRoute
         "/",
         "/about",
         "/events",
-        "/login"
+        "/login",
+        "/onboarding"
       ]
     },
     "/": {
@@ -149,6 +168,9 @@ export const routeTree = rootRoute
     },
     "/login": {
       "filePath": "login.tsx"
+    },
+    "/onboarding": {
+      "filePath": "onboarding.tsx"
     }
   }
 }
