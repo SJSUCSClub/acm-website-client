@@ -5,7 +5,7 @@ import {
   AvatarImage,
 } from "../components/atoms/avatar";
 import { Btn } from "../components/atoms/btn";
-import { Card, CardContent, CardHeader } from "../components/atoms/card";
+import { Card, CardContent } from "../components/atoms/card";
 import { Input } from "../components/atoms/input";
 
 import { TextArea } from "../components/atoms/text-area";
@@ -46,7 +46,9 @@ export default function Profile() {
         const data = await response.json();
         setFirstName(data.firstname);
         setLastName(data.lastname);
-      } catch (err: any) {}
+      } catch (err: any) {
+        console.error(err.message);
+      }
     };
 
     fetchFirstName();
