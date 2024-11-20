@@ -23,7 +23,7 @@ export const TextArea: React.FC<ITextAreaProps> = ({
       maxLength={160}
       className={cn(
         "rounded-xl bg-border text-text px-[16px] py-[10px] focus:outline-none w-full placeholder-neutral mb-2 border-border-hovered border-2",
-        className,
+        className
       )}
       {...props}
     />
